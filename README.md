@@ -1,28 +1,62 @@
-# iyzico Payment Flow Test Automation
+# Iyzico Payment Flow Test Automation
 
-## Project Overview
-This project automates the payment flow on the iyzico demo page using Cypress and Cucumber.
+Bu proje, Iyzico ödeme akışını otomatikleştirmek için Cypress ve Cucumber BDD kullanarak geliştirilmiştir. Kullanıcıların Iyzico demo sayfasında ürün seçip sepete eklemesini, ödeme sayfasına gitmesini ve test kart bilgileriyle ödeme yapmasını simüle eder.
 
-## Prerequisites
-- Node.js
-- npm
+## İçindekiler
 
-## Installation Steps
-1. Clone the repository.
-2. Run `npm install` to install dependencies.
+- [Kurulum](#kurulum)
+- [Kullanım](#kullanım)
+- [Proje Yapısı](#proje-yapısı)
+- [Test Senaryoları](#test-senaryoları)
+- [Notlar](#notlar)
 
-## Test Data Configuration
-Update `cypress/fixtures/testData.json` with your test card details.
+## Kurulum
 
-## Running Tests
-- Single Test: `npm test`
-- By Tags: `npm test --env TAGS="@payment"`
+1. Projeyi klonlayın veya indirin:
+   ```bash
+   git clone <repository-url>
+   cd iyzico-payment-flow
+   ```
 
-## Generating Reports
-- Use Mochawesome or Allure for detailed test reports.
+2. Gerekli bağımlılıkları yüklemek için:
+   ```bash
+   npm install
+   ```
 
-## CI/CD Integration
-- Integrate with your CI/CD pipeline for automated testing.
+## Kullanım
 
-## Test Card Information Reference
-- Use valid test card information for testing.
+- Testleri başlatmak için:
+  ```bash
+  npm run cy:open
+  ```
+  veya
+  ```bash
+  npm run cy:tests
+  ```
+
+## Proje Yapısı
+
+- **cypress/e2e/pages**: Test adımlarının ve sayfa nesnelerinin tanımlandığı dizin.
+    - **BasePage.js**: Genel test işlemleri için yardımcı metotlar içerir.
+    - **PaymentPage.js**: Ödeme sayfasına özgü işlemler için metotlar içerir.
+    - **step_definitions**: Gherkin adımlarının tanımlandığı dosyalar.
+
+- **cypress/e2e/Tests/features**: Gherkin dilinde yazılmış test senaryolarını içeren dosyalar.
+    - **paymentFlow.feature**: Ödeme akışını test eden senaryoları içerir.
+
+- **cypress/support**: Cypress yapılandırma ve destek dosyalarını içerir.
+    - **index.js**: Testler sırasında gerekli olan global ayarları ve olay dinleyicilerini içerir.
+
+## Test Senaryoları
+
+- **Başarılı Ödeme Akışı**: Kullanıcı, Iyzico demo sayfasında bir ürün seçer, sepete ekler, ödeme sayfasına gider ve test kart bilgileriyle ödeme yapar. Ödeme başarılı olduğunda, kullanıcıya bir onay mesajı gösterilir.
+
+## Notlar
+
+- Proje, Cypress'in en son sürümü ve Cucumber preprocessor ile uyumlu olacak şekilde yapılandırılmıştır.
+- Testler sırasında jQuery'nin yüklü olup olmadığını kontrol eden bir metot bulunmaktadır.
+- Testler tamamlandıktan sonra, tarayıcıyı sıfırlamak için boş bir sayfaya yönlendirilir.
+
+---
+
+Bu `README.md` dosyası, projenizin amacını, kurulumunu ve kullanımını özetlemektedir. Umarım faydalı olur!
