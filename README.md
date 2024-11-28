@@ -58,5 +58,3 @@ Bu proje, Iyzico ödeme akışını otomatikleştirmek için Cypress ve Cucumber
 - Testler tamamlandıktan sonra, tarayıcıyı sıfırlamak için boş bir sayfaya yönlendirilir.
 
 ---
-
-Bu `README.md` dosyası, projenizin amacını, kurulumunu ve kullanımını özetlemektedir. Umarım faydalı olur!
