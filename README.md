@@ -14,7 +14,7 @@ Bu proje, Iyzico ödeme akışını otomatikleştirmek için Cypress ve Cucumber
 
 1. Projeyi klonlayın veya indirin:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/ercankirbiyik/iyzico-payment-flow.git
    cd iyzico-payment-flow
    ```
 
