@@ -1,5 +1,6 @@
 class BasePage {
 	static visitURL(url) {
+		BasePage.checkQueryIsLoaded();
 		cy.visit(url);
 		cy.reload();
 		cy.log('Visiting ' + url);
@@ -23,6 +24,14 @@ class BasePage {
 	static verifyMessage(selector, message) {
 		cy.get(selector).should('contain', message);
 		cy.log('Message ' + message + ' is verified');
+	}
+
+	static checkQueryIsLoaded() {
+		cy.window().then((win) => {
+			if (!win.$) {
+				throw new Error('jQuery is not loaded');
+			}
+		});
 	}
 
 }
