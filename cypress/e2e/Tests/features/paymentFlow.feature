@@ -7,6 +7,8 @@ Feature: iyzico Payment Flow Test Automation
 ## 2. jQuery kütüphanesi yüklenmiş olsa bile, sayfa yüklendikten sonra jQuery kütüphanesi yüklenmiş olabilir
 ## Uygulamada jQuery kullanılıyorsa, jQuery'nin doğru bir şekilde yüklendiğinden emin olamadım.
 ## HTML dosyasında <script> etiketleri ile kontrol edebiliriz ama ben kontrol etmeme rağmen sebebini bulamadım.
+## Sonradan incelediğimde hatanın sebebi: sayfanın javascript kodlamasından kaynaklandığını buldum.
+## screenshots directorysi altına JQuery-Hata-Sebebi.png dosyasında detaylar görüntülenebilir.
 
   @payment @smoke @regression
   Scenario: Successful Payment Flow with Credit Card
